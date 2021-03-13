@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/ml-challenge
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+management:
+  health:
+    binders:
+      enabled: false
+    db:
+      enabled: false
+    diskspace:
+      enabled: false
+
+spring:
+  application:
+    name: ml-challenge
+
+logging:
+  level:
+    root: INFO
+    com.ml.challenge: DEBUG

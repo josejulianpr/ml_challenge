@@ -1,0 +1,48 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/ml-challege
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+management:
+  health:
+    binders:
+      enabled: false
+    db:
+      enabled: false
+    diskspace:
+      enabled: false
+
+spring:
+  application:
+    name: ml-challege
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximumPoolSize: 5
+      minimumIdle: 2
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+    properties:
+      hibernate:
+        # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+
+        format_sql: true
+        # Disable feature detection by this undocumented parameter. Check the org.hibernate.engine.jdbc.internal.JdbcServiceImpl.configure method for more details.
+        temp:
+          use_jdbc_metadata_defaults: false
+
+logging:
+  level:
+    root: INFO
+    com.one.campaign.api: DEBUG
