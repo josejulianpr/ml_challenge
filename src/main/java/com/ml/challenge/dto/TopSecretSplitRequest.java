@@ -10,8 +10,8 @@ import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class TopSecretSplitRequest {
 
     @NotNull

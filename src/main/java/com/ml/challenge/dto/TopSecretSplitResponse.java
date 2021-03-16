@@ -9,8 +9,8 @@ import java.util.List;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class TopSecretSplitResponse {
     private Double distance;
     private List<String> message;

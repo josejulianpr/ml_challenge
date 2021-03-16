@@ -1,6 +1,5 @@
-/src
-.pom.xml
 /.git
+.gitignore
 
 /.settings
 .classpath

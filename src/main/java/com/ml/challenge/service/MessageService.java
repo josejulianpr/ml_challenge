@@ -33,9 +33,7 @@ public class MessageService {
 
             for (List<String> list : messages) {
                 for (int i = 0; i < list.size(); ++i) {
-                    if (isNotBlank(list.get(i)) && isBlank(result.get(i))) {
-                        result.set(i, list.get(i));
-                    } else if (isNotBlank(list.get(i)) && isNotBlank(result.get(i)) && !list.contains(list.get(i))) {
+                    if (isNotBlank(list.get(i)) && (isBlank(result.get(i)) || !result.contains(list.get(i)))) {
                         result.set(i, list.get(i));
                     }
                 }

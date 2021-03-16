@@ -92,4 +92,17 @@ class MessageServiceTest {
         assertEquals("", response);
 
     }
+
+
+    @Test
+    void getMessage_WhenEdgeCase() {
+
+        List<String> list1 = Arrays.asList("", "este", "es", "un", "mensaje", "mensaje");
+        List<String> list2 = Arrays.asList("este", "   ", "", "un", "mensaje", ".");
+        List<String> list3 = Arrays.asList("", "", "es", "", "mensaje", "mensaje");
+
+        String response = service.getMessage(Arrays.asList(list1, list2, list3));
+
+        assertEquals("este es un mensaje .", response);
+    }
 }
